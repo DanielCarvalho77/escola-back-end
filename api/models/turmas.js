@@ -13,6 +13,10 @@ module.exports = (sequelize, DataTypes) => {
     Turmas.belongsTo(models.Niveis, {
       foreignKey: 'nivel_id'
     })
+
+    Turmas.belongsTo(models.Salas, {
+      foreignKey: 'salas_id'
+    })
   };
   return Turmas;
 };

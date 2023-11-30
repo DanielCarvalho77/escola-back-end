@@ -2,6 +2,7 @@ const bodyParser = require('body-parser');
 const pessoas = require('./pessoasRoute');
 const niveis = require('./niveisRoute');
 const turmas = require('./turmaRoute');
+const salas = require('./salasRoute');
 
 // module.exports = app => {
 //     app.use(bodyParser.json());
@@ -15,6 +16,7 @@ module.exports = app => {
       bodyParser.json(),
       pessoas,
       niveis,
-      turmas
+      turmas,
+      salas
       )
     }
