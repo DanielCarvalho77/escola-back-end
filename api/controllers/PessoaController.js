@@ -24,6 +24,20 @@ class PessoaController {
             }
         }
 
+        static async encontraPessoaPeloNome (req, res){
+            const {nome} = req.params;
+            try {
+                const pessoaEncontrada = await database.Pessoas.findOne({
+                    where: {
+                        nome: nome
+                    }
+                });               
+                return res.status(200).json(pessoaEncontrada);
+            } catch (error) {
+                return res.status(500).json(error.message);
+            }
+        }
+
         static async criaPessoa (req, res){
             const novaPessoa = req.body;
             try {

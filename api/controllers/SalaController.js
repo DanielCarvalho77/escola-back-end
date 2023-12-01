@@ -29,6 +29,9 @@ class SalaController{
                     id: Number(id)
                 }
             });
+            if(!salaEncontrada){
+                return res.status(200).json({mensagem: `Sala não encontrada`});
+            }
             return res.status(200).json(salaEncontrada);
         } catch (error) {
             return res.status(500).json(error.message);
